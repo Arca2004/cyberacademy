@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersec Academy</title>
+    <link rel="stylesheet" href="cyberindex.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+  </head>
+  <body>
+    <div class="scanner-lines"></div>
+
+    <div class="noise-overlay"></div>
+
+    <header>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="logo-text">
+          <span class="cyber">CYBER</span><span class="sec">SEC</span>
+          <span class="academy">Academy</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="nav-link"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="learn.html" class="nav-link"
+              ><i class="fas fa-graduation-cap"></i> Learn</a
+            >
+          </li>
+          <li>
+            <a href="about-us.html" class="nav-link"
+              ><i class="fas fa-info-circle"></i> About Us</a
+            >
+          </li>
+          <li id="auth-nav-item">
+            <a href="login.html" class="nav-link"
+              ><i class="fas fa-user"></i> Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-container">
+          <div class="particle-container">
+            <div id="particles-js"></div>
+          </div>
+
+          <div class="hero-content">
+            <div class="glitch-text">
+              <h1 class="glitch" data-text="CYBERSECURITY">CYBERSECURITY</h1>
+              <h2 class="sub-glitch" data-text="Next-Gen Learning Platform">
+                Interactive Learning Platform
+              </h2>
+            </div>
+
+            <p class="hero-description">
+                Explore essential cybersecurity tips to protect yourself online. Learn about attack targets, phishing scams, malware, password security, network threats, and more. Stay informed, stay safe!
+            </p>
+
+            <div class="cta-container">
+              <button
+                id="start-btn"
+                class="primary-btn"
+                onclick="window.location.href='learn.html'"
+              >
+                <span class="btn-content">Launch Platform</span>
+                <span class="btn-glitch"></span>
+              </button>
+              <a href="#features" class="secondary-btn">Explore Features</a>
+            </div>
+
+            <div class="cyber-stats">
+              <div class="stat">
+                <span class="counter" data-target="33">0</span>+
+                <span class="stat-label">Topics</span>
+              </div>
+              <div class="stat">
+                <span class="counter" data-target="98">0</span>%
+                <span class="stat-label">Success Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <div class="hologram-container">
+              <div class="hologram">
+                <i class="fas fa-lock hologram-icon"></i>
+              </div>
+              <div class="hologram-base"></div>
+              <div class="hologram-light"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2 class="section-title">
+          Cybersec Academy <span class="highlight">Features</span>
+        </h2>
+
+        <div class="grid-container">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Quizzes</h3>
+            <p>
+              Test your knowledge with quick and engaging quizzes that help
+              reinforce your learning.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Progess Tracker</h3>
+            <p>
+              A personalized dashboard where learners can see their progress and
+              completed modules
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="topics">
+        <div class="topics-container">
+          <h2 class="section-title">
+            Training <span class="highlight">Modules</span>
+          </h2>
+
+          <div class="module-grid">
+            <a href="intro-cybersec.html" class="module-card">
+              <div class="module-content">
+                <div class="module-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Introduction to Cybersecurity</h3>
+                <div class="module-stats">
+                  <span><i class="fas fa-book"></i> 12 Topics</span>
+                  <span><i class="fas fa-clock"></i> 2 Hours</span>
+                </div>
+                <div class="difficulty easy">
+                  <span>Beginner</span>
+                </div>
+              </div>
+              <div class="module-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span class="completion-rate"
+                    ><span class="stat-counter" data-target="0">0</span>%
+                    Complete</span
+                  >
+                  
+                </div>
+              </div>
+            </a>
+
+            <a href="attack-targets.html" class="module-card">
+              <div class="module-content">
+                <div class="module-icon">
+                  <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Attack Targets</h3>
+                <div class="module-stats">
+                  <span><i class="fas fa-book"></i> 5 Topics</span>
+                  <span><i class="fas fa-clock"></i> 60 minutes</span>
+                </div>
+                <div class="difficulty medium">
+                  <span>Intermediate</span>
+                </div>
+              </div>
+              <div class="module-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 60%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span class="completion-rate"
+                    ><span class="stat-counter" data-target="60">0</span>%
+                    Complete</span
+                  >
+                </div>
+              </div>
+            </a>
+
+            <a href="phishing-attack.html" class="module-card">
+              <div class="module-content">
+                <div class="module-icon">
+                  <i class="fas fa-anchor"></i>
+                </div>
+                <h3>Phishing Attacks</h3>
+                <div class="module-stats">
+                  <span><i class="fas fa-book"></i> 4 Topics</span>
+                  <span><i class="fas fa-clock"></i> 120 minutes</span>
+                </div>
+                <div class="difficulty medium">
+                  <span>Intermediate</span>
+                </div>
+              </div>
+              <div class="module-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 25%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span class="completion-rate"
+                    ><span class="stat-counter" data-target="25">0</span>%
+                    Complete</span
+                  >
+                 
+                </div>
+              </div>
+            </a>
+
+            <a href="malware.html" class="module-card">
+              <div class="module-content">
+                <div class="module-icon">
+                  <i class="fas fa-bug"></i>
+                </div>
+                <h3>Malware Infections</h3>
+                <div class="module-stats">
+                  <span><i class="fas fa-book"></i> 12 Topics</span>
+                  <span><i class="fas fa-clock"></i> 70 minutes</span>
+                </div>
+                <div class="difficulty hard">
+                  <span>Advanced</span>
+                </div>
+              </div>
+              <div class="module-progress">
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                  <span class="completion-rate"
+                    ><span class="stat-counter" data-target="0">0</span>%
+                    Complete</span
+                  >
+                
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section id="cta">
+        <div class="cta-container">
+          <div class="cta-content">
+            <h2>Ready to learn the basics of cybersecurity?</h2>
+            <p>
+            Learn the basics of cybersecurity and build a solid foundation to stay safe in the digital world.
+            </p>
+            <button id="join-btn" class="primary-btn">
+              <span class="btn-content">Start Your Journey</span>
+              <span class="btn-glitch"></span>
+            </button>
+          </div>
+
+          <div class="cta-decoration">
+            <div class="cyber-circuit"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <div class="logo-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <span class="cyber">CYBER</span><span class="sec">SEC</span>
+          <span class="academy">Academy</span>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Labs</a></li>
+              <li><a href="#">Certifications</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cybersecurity Academy. All rights reserved.</p>
+        <div class="tech-badge">
+          <span><i class="fas fa-code"></i> Secure Code</span>
+          <span><i class="fas fa-lock"></i> Encrypted</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      // Define logout function globally
+      function logout() {
+        // Remove current user from localStorage
+        localStorage.removeItem("currentUser");
+        // Redirect to login page
+        window.location.href = "login.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Check if user is logged in and update nav
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        const authNavItem = document.getElementById("auth-nav-item");
+
+        if (currentUser) {
+          authNavItem.innerHTML = `
+                    <a href="#" class="nav-link" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout (${currentUser.username})
+                    </a>
+                `;
+        }
+
+        // Update module progress cards based on localStorage
+        function updateModuleProgress() {
+          // Attack Targets module
+          const attackTargetsCard = document.querySelector(
+            ".module-card:nth-child(2)"
+          );
+          if (attackTargetsCard) {
+            const attackCompletedSections = JSON.parse(
+              localStorage.getItem("attackCompletedSections") || "[]"
+            );
+            const progressPercentage = Math.round(
+              (attackCompletedSections.length / 5) * 100
+            );
+
+            const progressFill =
+              attackTargetsCard.querySelector(".progress-fill");
+            if (progressFill) {
+              progressFill.style.width = `${progressPercentage}%`;
+            }
+
+            const completionRate = attackTargetsCard.querySelector(
+              ".completion-rate .stat-counter"
+            );
+            if (completionRate) {
+              completionRate.textContent = progressPercentage;
+              completionRate.setAttribute("data-target", progressPercentage);
+            }
+          }
+
+          // Phishing Attacks module
+          const phishingCard = document.querySelector(
+            ".module-card:nth-child(3)"
+          );
+          if (phishingCard) {
+            const phishingCompletedSections = JSON.parse(
+              localStorage.getItem("phishingCompletedSections") || "[]"
+            );
+            const progressPercentage = Math.round(
+              (phishingCompletedSections.length / 3) * 100
+            );
+
+            const progressFill = phishingCard.querySelector(".progress-fill");
+            if (progressFill) {
+              progressFill.style.width = `${progressPercentage}%`;
+            }
+
+            const completionRate = phishingCard.querySelector(
+              ".completion-rate .stat-counter"
+            );
+            if (completionRate) {
+              completionRate.textContent = progressPercentage;
+              completionRate.setAttribute("data-target", progressPercentage);
+            }
+          }
+        }
+
+        // Call once on page load
+        updateModuleProgress();
+
+        // Particle.js initialization
+        if (typeof particlesJS !== "undefined") {
+          particlesJS("particles-js", {
+            particles: {
+              number: { value: 80, density: { enable: true, value_area: 800 } },
+              color: { value: "#5cdb95" },
+              shape: { type: "circle" },
+              opacity: { value: 0.5, random: true },
+              size: { value: 3, random: true },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#88ccf1",
+                opacity: 0.4,
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+              },
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: { enable: true, mode: "grab" },
+                onclick: { enable: true, mode: "push" },
+                resize: true,
+              },
+              modes: {
+                grab: { distance: 140, line_linked: { opacity: 1 } },
+                push: { particles_nb: 4 },
+              },
+            },
+            retina_detect: true,
+          });
+        }
+
+        // Advanced counter animation with intersection observer
+        const counters = document.querySelectorAll(".counter, .stat-counter");
+
+        // Function to animate counter
+        const animateCounter = (counter, target, duration = 2000) => {
+          let startTime = null;
+          const startValue = 0;
+
+          // Easing function for smooth animation
+          const easeOutQuart = (t) => 1 - --t * t * t * t;
+
+          // Animation function
+          const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easedProgress = easeOutQuart(progress);
+
+            // Calculate current value based on easing
+            let currentValue;
+            if (target > 1000) {
+              // For large numbers use more dramatic effect
+              currentValue = Math.floor(easedProgress * target * 1.5);
+              if (currentValue > target) currentValue = target;
+            } else {
+              currentValue = Math.floor(
+                startValue + (target - startValue) * easedProgress
+              );
+            }
+
+            counter.textContent = currentValue.toLocaleString();
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          requestAnimationFrame(animate);
+        };
+
+        // Use Intersection Observer to trigger counter animation when in view
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = parseInt(counter.getAttribute("data-target"));
+
+              // Stagger the animation for module card stats
+              if (counter.classList.contains("stat-counter")) {
+                const delay =
+                  counter.closest(".module-card").dataset.index || 0;
+                setTimeout(() => {
+                  animateCounter(counter, target, 1500);
+                }, delay * 150);
+              } else {
+                animateCounter(counter, target);
+              }
+
+              observer.unobserve(counter);
+            }
+          });
+        }, observerOptions);
+
+        // Add data-index to module cards for staggered animations
+        document.querySelectorAll(".module-card").forEach((card, index) => {
+          card.dataset.index = index;
+        });
+
+        counters.forEach((counter) => {
+          observer.observe(counter);
+        });
+
+        // Testimonial slider
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const navButtons = document.querySelectorAll(".testimonial-nav");
+
+        navButtons.forEach((button, index) => {
+          button.addEventListener("click", () => {
+            slides.forEach((slide) => slide.classList.remove("active"));
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+
+            slides[index].classList.add("active");
+            button.classList.add("active");
+          });
+        });
+
+        // Auto-rotate testimonials
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function rotateTestimonials() {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          slides.forEach((slide) => slide.classList.remove("active"));
+          navButtons.forEach((btn) => btn.classList.remove("active"));
+
+          slides[currentSlide].classList.add("active");
+          navButtons[currentSlide].classList.add("active");
+        }
+
+        const slideInterval = setInterval(rotateTestimonials, 5000);
+
+        // Clear interval when user interacts with navigation
+        document
+          .querySelector(".testimonial-controls")
+          .addEventListener("click", () => {
+            clearInterval(slideInterval);
+          });
+
+        // Start button behavior
+        document
+          .getElementById("start-btn")
+          .addEventListener("click", function () {
+            window.location.href = "learn.html";
+          });
+
+        document
+          .getElementById("join-btn")
+          .addEventListener("click", function () {
+            window.location.href = "learn.html";
+          });
+      });
+    </script>
+  </body>
+</html>

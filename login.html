@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Academy - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            background: url('img/what-is-cybersecurity.jpg') no-repeat center center/cover;
+        }
+
+        /* Blurred Background Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        .header {
+            height: 190px;
+            background: url('img/what-is-cybersecurity.jpg') no-repeat center center/cover;
+            clip-path: ellipse(100% 80% at 50% 20%);
+        }
+
+        .form-container {
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+        }
+
+        p {
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+            color: white;
+            transition: border-color 0.3s;
+        }
+
+        /* Make the placeholder text white */
+        input::placeholder {
+            color: white;
+            opacity: 1;
+        }
+
+        input:focus {
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        .error-message {
+            color: white !important; /* Ensures the text remains white */
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .options input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #ffcc00;
+            margin-right: 8px;
+        }
+
+        .login-btn {
+            width: 80%;
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 14px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+        }
+
+        .login-btn:hover {
+            background: #ff9900;
+            box-shadow: 0 6px 12px rgba(255, 204, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .create-account {
+            margin-top: 15px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .create-account a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="form-container">
+            <h2>Cyber Academy</h2>
+            <p>Welcome to Cyber Academy</p>
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+            <p class="error-message" id="error-msg">Incorrect credentials!</p>
+            <div class="options">
+                <label><input type="checkbox" id="remember"> Remember Me</label>
+                <a href="#" style="color: #ffcc00; text-decoration: none; font-weight: 500;">Forgot Password?</a>
+            </div>
+            <button class="login-btn" onclick="login()">LOGIN</button>
+            <p class="create-account">Create Account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Check if there's a remembered user
+        document.addEventListener('DOMContentLoaded', function() {
+            const rememberedUser = localStorage.getItem('rememberedUser');
+            if (rememberedUser) {
+                const user = JSON.parse(rememberedUser);
+                document.getElementById('username').value = user.username;
+                document.getElementById('password').value = user.password;
+                document.getElementById('remember').checked = true;
+            }
+        });
+    
+        function login() {
+            // Get input values
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const remember = document.getElementById("remember").checked;
+            const errorMsg = document.getElementById("error-msg");
+    
+            // Check if fields are empty
+            if (username === "" || password === "") {
+                errorMsg.innerText = "Username and password cannot be empty!";
+                errorMsg.style.display = "block";
+                return;
+            }
+    
+            // Get users from localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Add default admin user if no users exist yet
+            if (users.length === 0) {
+                users.push({
+                    username: "admin",
+                    password: "password123"
+                });
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            
+            // Check if user exists and password matches
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                // If remember me is checked, store the credentials
+                if (remember) {
+                    localStorage.setItem('rememberedUser', JSON.stringify({
+                        username: username,
+                        password: password
+                    }));
+                } else {
+                    localStorage.removeItem('rememberedUser');
+                }
+                
+                // Store current user info
+                localStorage.setItem('currentUser', JSON.stringify({
+                    username: user.username,
+                    fullname: user.fullname || 'Admin User'
+                }));
+                
+                errorMsg.style.display = "none"; // Hide error message
+                document.body.style.opacity = "0"; // Smooth fade-out effect
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Redirect after fade-out
+                }, 200);
+            } else {
+                errorMsg.innerText = "Incorrect username or password!";
+                errorMsg.style.display = "block";
+            }
+        }
+    
+        // Allow pressing "Enter" to trigger login
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                login();
+            }
+        });
+    </script>
+</body>
+</html>
