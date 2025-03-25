@@ -1083,12 +1083,12 @@ SECURITY FAILURES:
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        let completedSections = JSON.parse(
-          localStorage.getItem("attackCompletedSections") || "[]"
-        );
-        let completedQuizzes = JSON.parse(
-          localStorage.getItem("attackCompletedQuizzes") || "[]"
-        );
+    // Clear any previously stored progress to start with no progress
+    localStorage.removeItem("attackCompletedSections");
+    localStorage.removeItem("attackCompletedQuizzes");
+
+    let completedSections = [];
+    let completedQuizzes = [];
 
         // Define topic progression order
         const topicOrder = [
