@@ -226,11 +226,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.module-card.active::before {
-    background: linear-gradient(to right, var(--cyber-green), var(--cyber-blue));
-    transform: scaleX(1);
-}
-
 .module-card.completed::before {
     background: var(--cyber-green);
     transform: scaleX(1);
